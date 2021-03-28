@@ -1,24 +1,25 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Usage of platform
+Users can sign up and sign in. Users can add projects with name and description. For each project they can log time spent by creating tasks with start and end time.
 
-Things you may want to cover:
+## MVP
+* User
+	* Project
+		* Task
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Models
+	* User
+		* first_name
+		* last_name
+		* email
+		* password
+	* Project
+		* user_id
+		* name
+		* description 
+	* Task
+		* project_id
+		* name
+		* start_time
+		* end_time
