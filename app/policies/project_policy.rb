@@ -5,9 +5,11 @@ class ProjectPolicy
     @user = user
     @project = project
   end
+
   def show?
   	project.user == user
   end 
+
   def edit?
   	show?
   end 
@@ -23,6 +25,5 @@ class ProjectPolicy
   def destory?
   	show?
   end 
-
 
 end

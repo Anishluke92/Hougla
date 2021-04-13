@@ -6,7 +6,7 @@ class User < ApplicationRecord
   has_many :projects, dependent: :destroy
   
   validates :name, :surname, presence: true
-   def username 
-   	 return self.email.split("@")[0].capitalize 
-   	end 
+  def username 
+    return self.email.split("@")[0].capitalize 
+  end 
 end
