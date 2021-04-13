@@ -2,7 +2,7 @@
 
 <p>
   <strong>User:</strong>
-  <%= @project.user_id %>
+  <%= @project.user.username %>
 </p>
 
 <p>
@@ -14,7 +14,7 @@
   <strong>Description:</strong>
   <%= @project.description %>
 </p>
-
+<%#= link_to 'Tasks', tasks_path %>
 <%= link_to 'Edit', edit_project_path(@project) %> |
 <%= link_to 'Back', projects_path %>
 <%= link_to 'Task', tasks_path %>

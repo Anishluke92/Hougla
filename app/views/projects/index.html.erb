@@ -15,7 +15,7 @@
   <tbody>
     <% @projects.each do |project| %>
       <tr>
-        <td><%= project.user_id %></td>
+        <td><%= project.user.username %></td>
         <td><%= project.name %></td>
         <td><%= project.description %></td>
         <td><%= link_to 'Show', project %></td>
@@ -27,5 +27,5 @@
 </table>
 
 <br>
-
 <%= link_to 'New Project', new_project_path %>
+<%= link_to "Home", root_path %>
