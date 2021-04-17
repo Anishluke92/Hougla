@@ -1,4 +1,4 @@
-class ProjectPolicy
+class ProjectPolicy < ApplicationPolicy
   attr_reader :user, :project
 
   def initialize(user, project)

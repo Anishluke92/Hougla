@@ -1,13 +1,14 @@
-class TaskPolicy
-  attr_reader :user, :task
+class TaskPolicy < ApplicationPolicy
+  attr_reader :project, :task
 
-  def initialize(user, task)
-    @user = user
+  def initialize(project, task)
     @task = task
+    @project = @task.project
+
   end
 
   def show?
-    task.user == user
+    task.project == project
   end
 
   def edit?
@@ -23,7 +24,6 @@ class TaskPolicy
   end
 
   def destroy?
-    show?
+     show?
   end
-
 end

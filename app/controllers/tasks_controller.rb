@@ -1,13 +1,14 @@
 class TasksController < ApplicationController
+  before_action :authenticate_user!, except: [:show, :index]
   before_action :get_project
   before_action :set_project, only: [:show, :edit, :update, :destroy]
   before_action :set_task, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, except: [:show, :index]
 
   # GET /tasks or /tasks.json
   def index
     @tasks = @project.tasks
   end
+
 
   # GET /tasks/1 or /tasks/1.json
   def show
