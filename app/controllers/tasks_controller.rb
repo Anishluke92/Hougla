@@ -1,8 +1,6 @@
 class TasksController < ApplicationController
-  before_action :authenticate_user!, except: [:show, :index]
-  before_action :get_project
-  before_action :set_project, only: [:show, :edit, :update, :destroy]
-  before_action :set_task, only: [:show, :edit, :update, :destroy]
+  before_action :set_project, only: [:index, :show, :new, :edit,  :create, :update, :destroy]
+  before_action :set_task, only: [:update, :destroy, :edit, :show]
 
   # GET /tasks or /tasks.json
   def index
@@ -18,7 +16,6 @@ class TasksController < ApplicationController
   # GET /tasks/new
   def new
     @task = @project.tasks.build
-
   end
 
   # GET /tasks/1/edit
@@ -66,11 +63,6 @@ class TasksController < ApplicationController
   end
 
   private
-
-
-    def get_project
-      @project = Project.find(params[:project_id])
-    end
 
     def set_project
       @project = Project.find(params[:project_id])
