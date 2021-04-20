@@ -5,23 +5,20 @@
   <%= @project.user.username %>
 </p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @project.name %>
-</p>
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title"> <strong>Name : </strong> <%= @project.name %></h5>
+    <p class="card-text"><strong>Description : </strong> <%= @project.description %> </p>
+     <strong> Tasks : </strong>
+  </div>
 
-<p>
-  <strong>Description:</strong>
-  <%= @project.description %>
-</p>
-<p>
-    <strong> Tasks </strong>
-    <% for task in @project.tasks %>
-        <ul>
-            <li><%= task.name %> </li>
-        </ul>
-    <% end %>
-<%#= link_to 'Tasks', tasks_path %>
-<%= link_to 'Edit', edit_project_path(@project) %> |
-<%= link_to 'Back', projects_path %>
-<%= link_to ' Add Task', project_tasks_path(@project) %>
+  <% @project.tasks.each_with_index do |task, i| %>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item"><%= i + 1 %>. <%= task.name %>       <%= link_to 'Show task', project_task_path(@project, task) %></li>
+  </ul>
+  <% end %>
+  <div class="card-body">
+   <%= link_to 'Re-edit', edit_project_path(@project), class:" card-link btn btn-primary" %>
+   <%= link_to ' Add Task', new_project_task_path(@project) , class:" card-link btn btn-primary"%>
+  </div>
+</div>
