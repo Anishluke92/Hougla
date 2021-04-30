@@ -5,7 +5,7 @@
 </style>
 <div class ="header">
   <h1>Projects</h1>
-  <%= link_to 'New Project', new_project_path, class:" card-link btn btn-primary" %>
+   <%= link_to 'New Project', new_project_path, class:" card-link btn btn-primary text-white" %>
 </div>
 <p id="notice"><%= notice %></p>
 <br>
@@ -26,9 +26,9 @@
               <% end %>
                 <h6 class="card-subtitle mb-2 text-muted">Username : <%= project.user.username %></h6>
                 <p class="card-text"><%= project.description %></p>
-                <%= link_to 'Show Task', project, class:" card-link btn btn-primary"  %>
-                <%= link_to 'Edit', edit_project_path(project),class:"card-link btn btn-success"  %>
-                <%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' },class:"card-link btn btn-danger"  %>
+                <%= link_to 'Show Task', project, class:" card-link btn btn-primary text-white"  %>
+                <%= link_to 'Edit', edit_project_path(project),class:"card-link btn btn-success text-white"  %>
+                <%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' },class:"card-link btn btn-danger text-white"  %>
 
              </div>
              <div class="card-footer text-muted">
