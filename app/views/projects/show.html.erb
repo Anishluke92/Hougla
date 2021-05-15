@@ -14,7 +14,14 @@
   <strong>Description:</strong>
   <%= @project.description %>
 </p>
+<p>
+    <strong> Tasks </strong>
+    <% for task in @project.tasks %>
+        <ul>
+            <li><%= task.name %> </li>
+        </ul>
+    <% end %>
 <%#= link_to 'Tasks', tasks_path %>
 <%= link_to 'Edit', edit_project_path(@project) %> |
 <%= link_to 'Back', projects_path %>
-<%= link_to 'Task', tasks_path %>
+<%= link_to ' Add Task', project_tasks_path(@project) %>
