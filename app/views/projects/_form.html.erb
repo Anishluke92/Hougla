@@ -10,16 +10,13 @@
       </ul>
     </div>
   <% end %>
-
   <div class="field">
     <%= form.label :name %>
     <%= form.text_field :name %>
   </div>
-
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_field :description %>
-  </div>
+   <%= form.label :description %>
+    <textarea cols="20" rows="5" id="pro_description" name="project[description]"
+rows="20"></textarea>
 
   <div class="actions">
     <%= form.submit %>

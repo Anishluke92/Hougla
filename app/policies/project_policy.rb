@@ -1,4 +1,4 @@
-class ProjectPolicy
+class ProjectPolicy < ApplicationPolicy
   attr_reader :user, :project
 
   def initialize(user, project)
@@ -8,22 +8,22 @@ class ProjectPolicy
 
   def show?
   	project.user == user
-  end 
+  end
 
   def edit?
   	show?
-  end 
+  end
 
   def create?
   	show?
-  end 
+  end
 
   def update?
     show?
-  end 
+  end
 
-  def destory?
+  def destroy?
   	show?
-  end 
+  end
 
 end
